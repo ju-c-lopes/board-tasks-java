@@ -35,7 +35,7 @@ public class BoardDAO {
         }
     }
 
-    private Optional<BoardEntity> findById(final Long id) throws SQLException {
+    public Optional<BoardEntity> findById(final Long id) throws SQLException {
         String sql = "SELECT id, name FROM BOARDS WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setLong(1, id);
