@@ -27,7 +27,7 @@ public class BoardDAO {
         return entity;
     }
 
-    private void delete(final Long id) throws SQLException {
+    public void delete(final Long id) throws SQLException {
         String sql = "DELETE FROM BOARDS WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setLong(1, id);
@@ -51,7 +51,7 @@ public class BoardDAO {
         }
     }
 
-    private boolean exists(final Long id) throws SQLException {
+    public boolean exists(final Long id) throws SQLException {
         String sql = "SELECT 1 FROM BOARDS WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setLong(1, id);
