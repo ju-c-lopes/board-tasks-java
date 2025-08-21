@@ -80,10 +80,10 @@ class Block {
 
 class ColumnType {
   <<enumeration>>
-  INICIAL
+  INITIAL
   FINAL
-  CANCELAMENTO
-  PENDENTE
+  CANCEL
+  PENDING
 }
 
 BoardColumn "N" --* "1" Board : pertence

@@ -10,6 +10,8 @@ import java.sql.SQLException;
 @NoArgsConstructor(access = PRIVATE)
 public class ConnectionConfig {
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/board", "root", "root");
+       Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/board", "root", "root");
+       connection.setAutoCommit(false);
+       return connection;
     }
 }
