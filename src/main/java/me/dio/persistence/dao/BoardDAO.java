@@ -15,7 +15,7 @@ public class BoardDAO {
 
     private final Connection connection;
 
-    private BoardEntity insert(final BoardEntity entity) throws SQLException {
+    public BoardEntity insert(final BoardEntity entity) throws SQLException {
         String sql = "INSERT INTO BOARDS(name) VALUES (?);";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, entity.getName());
