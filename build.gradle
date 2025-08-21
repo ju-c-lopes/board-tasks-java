@@ -1,0 +1,28 @@
+plugins {
+    id('java')
+    id('application')
+}
+
+group = 'me.dio'
+version = '1.0-SNAPSHOT'
+
+// Configurando a classe principal
+application {
+    mainClass = 'me.dio.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.liquibase:liquibase-core:4.29.1")
+    implementation("mysql:mysql-connector-java:8.0.33")
+    implementation("org.projectlombok:lombok:1.18.34")
+
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
+}
+
+test {
+    useJUnitPlatform()
+}
