@@ -3,8 +3,8 @@ package me.dio.service;
 import lombok.AllArgsConstructor;
 import me.dio.persistence.dao.BoardColumnDAO;
 import me.dio.persistence.dao.BoardDAO;
-import me.dio.persistence.dto.BoardColumnDTO;
-import me.dio.persistence.dto.BoardDetailsDTO;
+import me.dio.dto.BoardColumnDTO;
+import me.dio.dto.BoardDetailsDTO;
 import me.dio.persistence.entity.BoardEntity;
 
 import java.sql.Connection;
@@ -23,7 +23,7 @@ public class BoardQueryService {
         var optional = dao.findById(id);
         if (optional.isPresent()) {
             BoardEntity entity = optional.get();
-            entity.setBoardsColumns(boardColumnDAO.findByBoardId(entity.getId()));
+            entity.setBoardColumns(boardColumnDAO.findByBoardId(entity.getId()));
             return Optional.of(entity);
         }
         return Optional.empty();

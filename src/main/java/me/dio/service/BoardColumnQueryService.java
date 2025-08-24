@@ -14,7 +14,7 @@ public class BoardColumnQueryService {
     private final Connection connection;
 
     public Optional<BoardColumnEntity> findById(final Long id) throws SQLException {
-        BoardColumnDAO dao = new BoardColumnDAO(connection);
+        var dao = new BoardColumnDAO(connection);
         return dao.findById(id);
     }
 

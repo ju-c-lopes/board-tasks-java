@@ -1,4 +1,4 @@
-package me.dio.persistence.dto;
+package me.dio.dto;
 
 import me.dio.persistence.entity.BoardColumnTypeEntity;
 

@@ -1,4 +1,4 @@
-package me.dio.persistence.dto;
+package me.dio.dto;
 
 import java.time.OffsetDateTime;
 
@@ -8,7 +8,6 @@ public record CardDetailsDTO(Long id,
                              String blockReason,
                              OffsetDateTime blockedAt,
                              boolean blocked,
-                             long blocksAmount,
-                             String columnId,
-                             int columnName) {
+                             int blocksAmount,
+                             long columnId) {
 }

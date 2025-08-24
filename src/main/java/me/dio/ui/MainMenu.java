@@ -87,7 +87,7 @@ public class MainMenu {
         );
         columns.add(cancelColumn);
 
-        entity.setBoardsColumns(columns);
+        entity.setBoardColumns(columns);
         try (Connection connection = getConnection()) {
             BoardService service = new BoardService(connection);
             service.insert(entity);
