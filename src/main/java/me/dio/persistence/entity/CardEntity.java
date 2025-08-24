@@ -10,8 +10,8 @@ public class CardEntity {
     private Long id;
     private String title;
     private String description;
-    private int Order;
+    private int order;
     private OffsetDateTime createdAt;
     private OffsetDateTime movedAt;
-
+    private BoardColumnEntity boardColumn = new BoardColumnEntity();
 }
