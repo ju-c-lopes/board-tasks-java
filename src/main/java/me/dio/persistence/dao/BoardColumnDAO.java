@@ -103,7 +103,7 @@ public class BoardColumnDAO {
             statement.setLong(1, boardId);
             statement.executeQuery();
             ResultSet result = statement.getResultSet();
-            if (!result.next()) {
+            if (result.next()) {
                 BoardColumnEntity entity = new BoardColumnEntity();
                 entity.setName(result.getString("bc.name"));
                 entity.setType(findByName(result.getString("bc.type")));

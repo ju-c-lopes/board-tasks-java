@@ -22,8 +22,16 @@ public class BoardEntity {
     private List<BoardColumnEntity> boardColumns = new ArrayList<>();
 
     public BoardColumnEntity getInitialColumn() {
+        return getFilteredColumn(bc -> bc.getType().equals(INITIAL));
+    }
+
+    public BoardColumnEntity getCancelColumn() {
+        return getFilteredColumn(bc -> bc.getType().equals(CANCEL));
+    }
+
+    private BoardColumnEntity getFilteredColumn(Predicate<BoardColumnEntity> filter) {
         return boardColumns.stream()
-                .filter(bc -> bc.getType().equals(INITIAL))
+                .filter(filter)
                 .findFirst().orElseThrow();
     }
 }
